@@ -19,7 +19,7 @@ authors = [
 ]
 
 classifiers = [
-  "Development Status :: 4 - Beta",
+  "Development Status :: 3 - Alpha",
   "Programming Language :: Python",
   "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
@@ -47,6 +47,10 @@ dependencies = [
   "pytest",
   "pytest-cov",
 ]
+
+[tool.hatch.build.targets.wheel.hooks.custom]
+path = "hooks/pkg.py"
+
 [tool.hatch.envs.default.scripts]
 cov = "pytest --cov-report=term-missing --cov-config=pyproject.toml --cov=pkg --cov=tests {args}"
 no-cov = "cov --no-cov {args}"
@@ -64,3 +68,6 @@ exclude_lines = [
   "if __name__ == .__main__.:",
   "if TYPE_CHECKING:",
 ]
+
+[tool.pkg.project]
+uuid = "82a64458-cf50-4a12-bf2c-66d0169e541d"

@@ -14,6 +14,7 @@ from typing import Protocol, Literal
 from .package import PythonPackage
 from .registry import PackageRegistry
 
+__pkgfile__: Literal["pyproject.toml"] = "pyproject.toml"
 __envfile__: Literal["pkg.toml"] = "pkg.toml"
 __envlock__: Literal["pkg.lock"] = "pkg.lock"
 

@@ -3,10 +3,13 @@ A REST api for interacting with PyPi servers.
 """
 
 __export__ = {
-    "metadata",
+    "metadata", 
+    "versions",
+    "distribution",
+    "download",
 }
 
-from typing import Any, Optional
+from typing import Optional
 from pypi_simple import PYPI_SIMPLE_ENDPOINT
 from functools import cache
 from os.path import curdir
@@ -108,8 +111,6 @@ def download(
 
     with open(location, "wb") as file:
         file.write(response.content)
-    
-
 
 if __name__ == "__main__":
     ...
